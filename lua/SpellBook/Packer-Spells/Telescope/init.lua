@@ -1,9 +1,13 @@
+--    'opts.shorten_path' is no longer valid. Please use 'opts.path_display' instead. Please See ':help telescope.changelog-839'
+--    'opts.results_height' is no longer valid. Please see ':help telescope.changelog-922'
+--    'opts.results_width' actually didn't do anything. Please see ':help telescope.changelog-922'
+--    'opts.prompt_position' is no longer valid. Please use 'layout_config.prompt_position' instead.
+--    'opts.preview_cutoff' is no longer valid. Please use 'layout_config.preview_cutoff' instead.
 local actions = require('telescope.actions')
 
 require('telescope').setup {
     defaults = {
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_position = "bottom",
         -- prompt_prefix = " ",
         prompt_prefix = " ",
         selection_caret = " ",
@@ -12,16 +16,17 @@ require('telescope').setup {
         selection_strategy = "reset",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
-        layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false}},
+        layout_config = {
+            width = 0.75,
+            prompt_position = "bottom",
+            preview_cutoff = 120,
+            horizontal = { mirror = false },
+            vertical = { mirror = false },
+},
         file_sorter = require'telescope.sorters'.get_fzy_sorter,
-        file_ignore_patterns = {},
+        file_ignore_patterns = {'packer_compiled'},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        shorten_path = true,
-        winblend = 0,
-        width = 0.75,
-        preview_cutoff = 120,
-        results_height = 1,
-        results_width = 0.8,
+        path_display = {'shorten'},
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
@@ -35,20 +40,16 @@ require('telescope').setup {
         buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
         mappings = {
             i = {
-                ["<C-c>"] = actions.close,
-                ["<esc>"] = actions.close,
-                -- Add up multiple actions
-                ["<CR>"] = actions.select_default + actions.center
-
-                -- You can perform as many actions in a row as you like
-                -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
+                ["<C-q>"] = actions.send_to_qflist,
             },
             n = {
                 -- Normal mode actions
             }
         }
     },
-    extensions = {fzy_native = {override_generic_sorter = false, override_file_sorter = true}}
+    extensions = {
+        fzy_native = {override_generic_sorter = false, override_file_sorter = true}
+    }
 }
 
 -- Mappings	Action
@@ -65,3 +66,14 @@ require('telescope').setup {
 -- <Esc>        close telescope (in normal mode)
 
 require'telescope'.load_extension('project')
+--
+
+local M = {}
+M.search_dotfiles = function ()
+    require("telescope.builtin").find_files({
+        promt_tittle = "< Da Dot Files >",
+        cwd = "~/.config/",
+    })
+end
+
+return M

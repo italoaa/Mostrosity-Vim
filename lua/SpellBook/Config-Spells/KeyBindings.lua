@@ -32,8 +32,11 @@ vim.api.nvim_set_keymap("i", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, nore
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true, noremap = true })
 
 -- Movement
--- vim.api.nvim_set_keymap('i',',,','<esc>/<++><cr>"_c4l',{silent= false})
+vim.api.nvim_set_keymap('i',',,','<esc>/<++><cr>"_c4l',{silent= false})
 
+
+-- Auto remove White space
+vim.api.nvim_set_keymap('n','<C-l>',":%s/\\s\\+$//e<cr>",{noremap = true, silent = true})
 
 -- better indenting
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
@@ -53,12 +56,15 @@ vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silen
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Move current line / block with Alt-j/k ala vscode.
-vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-j>", ":m '>+1<CR>gv-gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<D-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<D-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "<D-j>", ":m '>+1<CR>gv-gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "<D-k>", ":m '<-2<CR>gv-gv", { noremap = true, silent = true })
+
+
+
 
 
 
@@ -103,15 +109,17 @@ vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, s
 vim.api.nvim_set_keymap('n', '<TAB>', ':BufferNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':BufferPrevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-x>', ':BufferClose<CR>', { noremap = true, silent = true })
--- Fterm
--- vim.api.nvim_set_keymap("n", '<Tab>',"<cmd>lua require('FTerm').open()<cr>",{noremap = true, silent = true})
--- vim.api.nvim_set_keymap("t", '<Tab>',"<cmd>lua require('FTerm').close()<cr>",{noremap = true, silent = true})
+
+-- =========================== Telescope/project ====================================
+
+vim.api.nvim_set_keymap('n','π',"<cmd>lua require'telescope'.extensions.project.project{}<cr>",{ noremap = true, silent = true })
 
 -- =========================== Compe ====================================
- -- vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
- vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
- -- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
   vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", { noremap = true, silent = true, expr = true })
   vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", { noremap = true, silent = true, expr = true })
@@ -119,6 +127,14 @@ vim.api.nvim_set_keymap('n', '<S-x>', ':BufferClose<CR>', { noremap = true, sile
   vim.api.nvim_set_keymap("i", "<C-f>", "compe#scroll({ 'delta': +4 })", { noremap = true, silent = true, expr = true })
   vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': -4 })", { noremap = true, silent = true, expr = true })
 
+-- ============================ FTerm ================================
+
+vim.api.nvim_set_keymap("n", 'ƒ',"<cmd>lua require('FTerm').open()<cr>",{noremap = true, silent = true})
+vim.api.nvim_set_keymap("t", 'ƒ',"<cmd>lua require('FTerm').close()<cr>",{noremap = true, silent = true})
+
+-- ============================ Telescope ================================
+
+vim.api.nvim_set_keymap("n","∂","<cmd>lua require('SpellBook.Packer-Spells.Telescope').search_dotfiles()<cr>",{noremap = true, silent = true})
 
 -- ============================ Which Key ================================
 
@@ -128,6 +144,66 @@ local mappings = {
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["h"] = "No Highlight",
+    d = {
+        name = "+Debug",
+        b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint"},
+        c = {"<cmd>lua require'dap'.continue()<cr>", "Continue"},
+        i = {"<cmd>lua require'dap'.step_over()<cr>", "Step Into"},
+        o = {"<cmd>lua require'dap'.step_into()<cr>", "Step Over"},
+        s = {"<cmd>lua require'dap'.continue()<cr>", "Start"},
+        h = {"<cmd> require'dap.ui.variables'.hover(function () return vim.fn.expand('<cexpr>') end)<cr>", "hover - window"},
+        v = {"<cmd>lua require('dapui').toggle()<cr>","dap ui"},
+    },
+    g = {
+        name = "+Git",
+        o = {"<cmd>Telescope git_status<cr>", "Open changed file"},
+        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+        c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
+        C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
+        u = {"<cmd>call v:lua.__fterm_gitui()<cr>","Git Ui"}
+    },
+    l = {
+        name = "+LSP",
+        f = {"<cmd>LspFormatting<cr>", "Format"},
+        i = {"<cmd>LspInfo<cr>", "Info"},
+        t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
+    },
+    s = {
+        name = "+Search",
+        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
+        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
+        f = {"<cmd>Telescope find_files<cr>", "Find File"},
+        m = {"<cmd>Telescope marks<cr>", "Marks"},
+        M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
+        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
+        R = {"<cmd>Telescope registers<cr>", "Registers"},
+        t = {"<cmd>Telescope live_grep<cr>", "Text"}
+    },
+    t = {
+        name = "+Term",
+        g = {"<cmd>call v:lua.__fterm_gitui()<cr>","Git Ui"},
+        t = {"<cmd>call v:lua.__fterm_top()<cr>","bpytop"}
+    },
+    p = {
+        name = "+Packer",
+        I = {"<cmd>PackerInstall<cr>","PackerInstall"},
+        C = {"<cmd>PackerCompile<cr>","PackerCompile"},
+        S = {"<cmd>PackerSync<cr>","PackerSync"},
+        s = {"<cmd>PackerStatus<cr>","PackerStatus"},
+    },
+    H = {
+        name = "+Harpoon options",
+        n = {'<cmd>lua require("harpoon.mark").add_file()<cr>', 'new harpoon mark'},
+        m = {'<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'List marks'}
+    },
+    C = {
+        name = "+Config",
+        k = {'<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'Jump to keybindings'},
+        p = {'<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'Jump to Packer'},
+        r = {'<cmd>lua require("SpellBook.Packer-Spells.Dash").cycle()<cr>', 'reload Dashboard'},
+    },
+
 }
 
 require("which-key").setup {

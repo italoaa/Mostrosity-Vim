@@ -1,4 +1,3 @@
---8888888b.                   888
 --888   Y88b                  888
 --888    888                  888
 --888   d88P 8888b.   .d8888b 888  888  .d88b.  888d888
@@ -63,6 +62,8 @@ return require("packer").startup(function(use)
 
     -- ColorSchemes
     use {'christianchiarulli/nvcode-color-schemes.vim'}
+    use{'sainnhe/sonokai'}
+    use{'glepnir/zephyr-nvim'}
 
     -- Lsp
     use {'neovim/nvim-lspconfig'}
@@ -76,17 +77,89 @@ return require("packer").startup(function(use)
             end
         }
 
+    -- Git Signs on the side of the buffer
+    use {'lewis6991/gitsigns.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim'
+              },
+            config = function() require('SpellBook.Packer-Spells.GitSigns') end
+           -- config = function() require('gitsigns').setup() end
+        }
+
     -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},{'nvim-telescope/telescope-fzy-native.nvim'}}
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},{'nvim-telescope/telescope-fzy-native.nvim'},{'nvim-telescope/telescope-project.nvim'}},
+      config = function ()
+      	        require('SpellBook.Packer-Spells.Telescope')
+      end
     }
 
 
+    -- Add color to these #FFFFF
+    use{'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('SpellBook.Packer-Spells.Colorizer')
+        end
+    }
+
+    -- DashBoard
+    use{'glepnir/dashboard-nvim',
+--           config = require('SpellBook.Packer-Spells.Dash')
+        }
+
+    -- Terminal
+    use {
+    "numtostr/FTerm.nvim",
+    config = function()
+        require'SpellBook.Packer-Spells.FTerm'
+        require("FTerm").setup({
+            dimensions  = {
+                height = 0.8,
+                width = 0.8,
+                x = 0.5,
+                y = 0.5
+            },
+            border = 'single' -- or 'double'
+        })
+    end
+    }
+
+    -- Harpoon
+    use{'ThePrimeagen/harpoon',
+            config = function ()
+               require('SpellBook.Packer-Spells.Harpoon')
+            end
+        }
+
+    -- Snippets
+    use{'hrsh7th/vim-vsnip'}
+    use{'hrsh7th/vim-vsnip-integ'}
     -- Debugger
     use {"mfussenegger/nvim-dap",
             config = function ()
 	            require'SpellBook.Packer-Spells.Dap'
+            end
+        }
+    use { "rcarriga/nvim-dap-ui",
+            requires = {"mfussenegger/nvim-dap"},
+            config  = function ()
+	            require'SpellBook.Packer-Spells.DapUi'
+            end
+        }
+    use{'mfussenegger/nvim-dap-python'}
+
+    -- Formater
+    use{'sbdchd/neoformat',
+            config = function ()
+	            require('SpellBook.Packer-Spells.NeoFormat')
+            end
+        }
+
+    -- Markdown
+    use{'iamcco/markdown-preview.nvim',
+            config = function ()
+	            require('SpellBook.Packer-Spells.Markdown')
             end
         }
 
@@ -103,7 +176,10 @@ return require("packer").startup(function(use)
     use {"kyazdani42/nvim-web-devicons"}
 
     -- Writing
-    use {"windwp/nvim-autopairs"}
+    use {"windwp/nvim-autopairs",
+        config = function ()
+           require('SpellBook.Packer-Spells.AutoPairs')
+end}
     use {"terrortylor/nvim-comment",
             config = function()
                require('SpellBook.Packer-Spells.Comment')

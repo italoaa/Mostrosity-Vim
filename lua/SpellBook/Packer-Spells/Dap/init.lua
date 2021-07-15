@@ -11,5 +11,8 @@ vim.fn.sign_define("DapBreakpoint", {
 })
 dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
 
+------------------ Python ------------------
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
 
 -- here add the Dap configs

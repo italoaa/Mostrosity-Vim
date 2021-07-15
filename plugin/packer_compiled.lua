@@ -69,21 +69,56 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FTerm.nvim"] = {
+    config = { "\27LJ\2\n½\1\0\0\4\0\a\0\f6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0029\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\1K\0\1\0\15dimensions\1\0\1\vborder\vsingle\1\0\4\6x\4\0€€€ÿ\3\6y\4\0€€€ÿ\3\nwidth\4š³æÌ\t™³¦ÿ\3\vheight\4š³æÌ\t™³¦ÿ\3\nsetup\nFTerm\"SpellBook.Packer-Spells.FTerm\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/FTerm.nvim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+  },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0%SpellBook.Packer-Spells.GitSigns\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  harpoon = {
+    config = { "\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$SpellBook.Packer-Spells.Harpoon\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/harpoon"
+  },
   ["lsp-rooter.nvim"] = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/lsp-rooter.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0%SpellBook.Packer-Spells.Markdown\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+  },
+  neoformat = {
+    config = { "\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.NeoFormat\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/neoformat"
   },
   ["nvcode-color-schemes.vim"] = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
   },
   ["nvim-autopairs"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.AutoPairs\frequire\0" },
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-colorizer.lua"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.Colorizer\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     config = { "\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$SpellBook.Packer-Spells.Comment\frequire\0" },
@@ -101,6 +136,15 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 SpellBook.Packer-Spells.Dap\frequire\0" },
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    config = { "\27LJ\2\n=\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\"SpellBook.Packer-Spells.DapUi\frequire\0" },
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -136,11 +180,20 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  sonokai = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/sonokai"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
+  ["telescope-project.nvim"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/telescope-project.nvim"
+  },
   ["telescope.nvim"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.Telescope\frequire\0" },
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
@@ -148,29 +201,77 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/vim-sanegx"
   },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+  },
+  ["zephyr-nvim"] = {
+    loaded = true,
+    path = "/Users/italoamaya/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 SpellBook.Packer-Spells.Dap\frequire\0", "config", "nvim-dap")
-time([[Config for nvim-dap]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\nB\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0'SpellBook.Packer-Spells.TreeSitter\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: markdown-preview.nvim
+time([[Config for markdown-preview.nvim]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0%SpellBook.Packer-Spells.Markdown\frequire\0", "config", "markdown-preview.nvim")
+time([[Config for markdown-preview.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig%SpellBook.Packer-Spells.NvimTree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: harpoon
+time([[Config for harpoon]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$SpellBook.Packer-Spells.Harpoon\frequire\0", "config", "harpoon")
+time([[Config for harpoon]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\nB\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0'SpellBook.Packer-Spells.TreeSitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 SpellBook.Packer-Spells.Dap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.AutoPairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: FTerm.nvim
+time([[Config for FTerm.nvim]], true)
+try_loadstring("\27LJ\2\n½\1\0\0\4\0\a\0\f6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0029\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\1K\0\1\0\15dimensions\1\0\1\vborder\vsingle\1\0\4\6x\4\0€€€ÿ\3\6y\4\0€€€ÿ\3\nwidth\4š³æÌ\t™³¦ÿ\3\vheight\4š³æÌ\t™³¦ÿ\3\nsetup\nFTerm\"SpellBook.Packer-Spells.FTerm\frequire\0", "config", "FTerm.nvim")
+time([[Config for FTerm.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.Telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.Colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\"SpellBook.Packer-Spells.DapUi\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0%SpellBook.Packer-Spells.GitSigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-comment
 time([[Config for nvim-comment]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$SpellBook.Packer-Spells.Comment\frequire\0", "config", "nvim-comment")
 time([[Config for nvim-comment]], false)
+-- Config for: neoformat
+time([[Config for neoformat]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0&SpellBook.Packer-Spells.NeoFormat\frequire\0", "config", "neoformat")
+time([[Config for neoformat]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

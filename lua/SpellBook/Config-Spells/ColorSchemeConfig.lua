@@ -7,6 +7,13 @@
 -- | (__| (_) || |__ | (_) ||   /  
 --  \___|\___/ |____| \___/ |_|_\
 
-vim.cmd('let g:nvcode_termcolors=256')
+vim.cmd('let g:nvcode_termcsokai=256')
 
-vim.cmd('colorscheme nord')
+-- Sonokai
+
+vim.g.sonokai_style = 'andromeda'
+
+-- vim.cmd('colorscheme sonokai')
+
+vim.cmd('colorscheme zephyr')
+
