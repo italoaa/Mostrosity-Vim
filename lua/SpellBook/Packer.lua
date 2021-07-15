@@ -64,6 +64,8 @@ return require("packer").startup(function(use)
     use {'christianchiarulli/nvcode-color-schemes.vim'}
     use{'sainnhe/sonokai'}
     use{'glepnir/zephyr-nvim'}
+    use "siduck76/nvim-base16.lua"
+
 
     -- Lsp
     use {'neovim/nvim-lspconfig'}
@@ -105,8 +107,10 @@ return require("packer").startup(function(use)
 
     -- DashBoard
     use{'glepnir/dashboard-nvim',
---           config = require('SpellBook.Packer-Spells.Dash')
-        }
+        config = function ()
+            require('SpellBook.Packer-Spells.Dash')
+        end
+}
 
     -- Terminal
     use {
