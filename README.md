@@ -4,9 +4,9 @@
 # Mostrosity-vim
   
   
-  <img src="https://user-images.githubusercontent.com/72895337/127372993-52ac2b3a-f02b-41c2-8d07-d2f2c819af24.png" width="100" height="100">
+  <img src="https://user-images.githubusercontent.com/72895337/127372993-52ac2b3a-f02b-41c2-8d07-d2f2c819af24.png">
   
-  <img src="https://user-images.githubusercontent.com/72895337/127373211-04fae9ad-7ec0-43ae-94e4-050a5171adc8.png" width="100" height="100">
+  <img src="https://user-images.githubusercontent.com/72895337/127373211-04fae9ad-7ec0-43ae-94e4-050a5171adc8.png">
   
   
 </div>
