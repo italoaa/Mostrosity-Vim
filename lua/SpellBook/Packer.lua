@@ -65,6 +65,7 @@ return require("packer").startup(function(use)
     use{'sainnhe/sonokai'}
     use{'glepnir/zephyr-nvim'}
     use "siduck76/nvim-base16.lua"
+    use{"dylanaraps/wal.vim"}
 
 
     -- Lsp
@@ -79,6 +80,14 @@ return require("packer").startup(function(use)
             end
         }
 
+    -- Navigator for code analysis
+    -- use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
+    --     config = function ()
+    --         require('SpellBook.Packer-Spells.Navi')
+    --     end
+    -- }
+
+
     -- Git Signs on the side of the buffer
     use {'lewis6991/gitsigns.nvim',
             requires = {
@@ -87,6 +96,14 @@ return require("packer").startup(function(use)
             config = function() require('SpellBook.Packer-Spells.GitSigns') end
            -- config = function() require('gitsigns').setup() end
         }
+
+    -- Coffee script support
+    use{"kchmck/vim-coffee-script"}
+
+
+    -- Practice vim
+    use {"ThePrimeagen/vim-be-good"}
+
 
     -- Telescope
     use {

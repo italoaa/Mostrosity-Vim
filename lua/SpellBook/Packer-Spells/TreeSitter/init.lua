@@ -17,3 +17,5 @@ treesitter_configs.setup {
     disable = { "latex" },
   },
 }
+
+vim.cmd('let g:nvcode_termcolors=256')

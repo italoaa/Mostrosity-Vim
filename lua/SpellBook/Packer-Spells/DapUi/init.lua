@@ -11,15 +11,14 @@ require("dapui").setup({
     edit = "e",
   },
   sidebar = {
-    open_on_start = true,
+    open_on_start = false,
     elements = {
       -- You can change the order of elements in the sidebar
       "scopes",
-      "breakpoints",
       "stacks",
       "watches"
     },
-    width = 40,
+    width = 50,
     position = "left" -- Can be "left" or "right"
   },
   tray = {
@@ -27,7 +26,7 @@ require("dapui").setup({
     elements = {
       "repl"
     },
-    height = 10,
+    height = 0,
     position = "bottom" -- Can be "bottom" or "top"
   },
   floating = {
