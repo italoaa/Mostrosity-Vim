@@ -25,8 +25,10 @@ $ git clone URL
 
 ## How it Works?
 ### File structure
-<img src="https://user-images.githubusercontent.com/72895337/125215346-e0320d80-e280-11eb-8ea1-96febef22d63.png" height="500">
-### Sourcing Structure
-Sourcing I am refering to how files call other files and so on so you can know if you are efiting the config where to place configs and where to call
 
-<img scr="https://user-images.githubusercontent.com/72895337/125215326-cee90100-e280-11eb-9a6c-e62be0364973.png">
+<img src="https://user-images.githubusercontent.com/72895337/125215346-e0320d80-e280-11eb-8ea1-96febef22d63.png" height="500">
+
+Spells are just lua requiring the modules - So the config file has spells/modules like keybindings etc.
+
+## Contents
+This config has the indispensable for a config based on productivity. All the config uses Packer to manage the plugins so they can be lazy loaded to save startup time. (haven't done this yet but can be done) Then for packer the most important plugins are TreeSitter for highlighting, Whichkey for good keybindings, telescope to fuzzy yoouuur way to find anything you want, lsp-config to make configuring lsp easier and finally Dap for debug.
