@@ -1,8 +1,3 @@
---    'opts.shorten_path' is no longer valid. Please use 'opts.path_display' instead. Please See ':help telescope.changelog-839'
---    'opts.results_height' is no longer valid. Please see ':help telescope.changelog-922'
---    'opts.results_width' actually didn't do anything. Please see ':help telescope.changelog-922'
---    'opts.prompt_position' is no longer valid. Please use 'layout_config.prompt_position' instead.
---    'opts.preview_cutoff' is no longer valid. Please use 'layout_config.preview_cutoff' instead.
 local actions = require('telescope.actions')
 
 require('telescope').setup {
@@ -43,6 +38,7 @@ require('telescope').setup {
                 ["<C-q>"] = actions.send_to_qflist,
             },
             n = {
+                ["Esc"] = actions.close,
                 -- Normal mode actions
             }
         }
@@ -71,7 +67,7 @@ require'telescope'.load_extension('project')
 local M = {}
 M.search_dotfiles = function ()
     require("telescope.builtin").find_files({
-        promt_tittle = "< Da Dot Files >",
+        prompt_title = "< Da Dot Files >",
         cwd = "~/.config/",
     })
 end

@@ -13,6 +13,14 @@ function _G.__fterm_gitui()
     gitui:toggle()
 end
 
+local lazygit = term:new():setup({
+    cmd = "lazygit"
+})
+
+function _G.__fterm_lazygit()
+    lazygit:toggle()
+end
+
 local top = term:new():setup({
     cmd = "bpytop"
 })

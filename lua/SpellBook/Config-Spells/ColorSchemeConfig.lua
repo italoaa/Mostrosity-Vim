@@ -13,12 +13,18 @@ vim.cmd('let g:nvcode_termcsokai=256')
 
 vim.g.sonokai_style = 'andromeda'
 
--- vim.cmd('colorscheme sonokai')
+vim.cmd('colorscheme sonokai')
 
+vim.cmd('colorscheme lunar')
 -- vim.cmd('colorscheme zephyr')
-
-local base16 = require "base16"
-
-base16(base16.themes["onedark"], true)
-
-require('SpellBook.Config-Spells.Highlights')
+--
+-- local base16 = require "base16"
+--
+-- base16(base16.themes["onedark"], true)
+-- -- --
+-- palenight
+-- aurora
+-- lunar
+-- require('SpellBook.Config-Spells.Highlights')
+-- vim.cmd('colorscheme wal')
+vim.cmd('colorscheme aurora')

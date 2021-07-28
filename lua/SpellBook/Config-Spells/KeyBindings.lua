@@ -32,11 +32,12 @@ vim.api.nvim_set_keymap("i", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, nore
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true, noremap = true })
 
 -- Movement
-vim.api.nvim_set_keymap('i',',,','<esc>/<++><cr>"_c4l',{silent= false})
+vim.api.nvim_set_keymap('i',',,','<esc>/<++><cr>c4l',{silent= false})
+vim.api.nvim_set_keymap('n',',,','<esc>/<++><cr>c4l',{silent= false})
 
 
 -- Auto remove White space
-vim.api.nvim_set_keymap('n','<C-l>',":%s/\\s\\+$//e<cr>",{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','§',":%s/\\s\\+$//e<cr>",{noremap = true, silent = true})
 
 -- better indenting
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
@@ -56,13 +57,13 @@ vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silen
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Move current line / block with Alt-j/k ala vscode.
-vim.api.nvim_set_keymap("n", "<D-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<D-k>", ":m .-2<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<D-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<D-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<D-j>", ":m '>+1<CR>gv-gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<D-k>", ":m '<-2<CR>gv-gv", { noremap = true, silent = true })
-
+-- vim.api.nvim_set_keymap("n", "<D-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<D-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<D-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<D-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<D-j>", ":m '>+1<CR>gv-gv", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<D-k>", ":m '<-2<CR>gv-gv", { noremap = true, silent = true })
+-- 
 
 
 
@@ -183,6 +184,7 @@ local mappings = {
     t = {
         name = "+Term",
         g = {"<cmd>call v:lua.__fterm_gitui()<cr>","Git Ui"},
+        l = {"<cmd>call v:lua.__fterm_lazygit()<cr>","Git Ui"},
         t = {"<cmd>call v:lua.__fterm_top()<cr>","bpytop"}
     },
     p = {
@@ -208,8 +210,8 @@ local mappings = {
 
 require("which-key").setup {
     plugins = {
-        marks = true, -- shows a list of your marks on ' and `
-        registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+        marks = false, -- shows a list of your marks on ' and `
+        registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
@@ -238,7 +240,7 @@ require("which-key").setup {
         width = {min = 20, max = 50}, -- min and max width of the columns
         spacing = 3 -- spacing between columns
     },
-    hidden = {"<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
+    hidden = {"<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ ", ","}, -- hide mapping boilerplate
     show_help = true -- show help message on the command line when the popup is visible
 }
 

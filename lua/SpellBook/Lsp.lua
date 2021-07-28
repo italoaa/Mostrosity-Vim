@@ -73,4 +73,4 @@ vim.lsp.protocol.CompletionItemKind = {
 -------------------------------- Require your language Config ---------------------------
 
 require('SpellBook.Lsp-Spells.Lua')
--- require('SpellBook.Lsp-Spells.Python')
+require('SpellBook.Lsp-Spells.Python')
