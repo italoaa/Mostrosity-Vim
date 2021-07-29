@@ -3,40 +3,11 @@
   
 # Mostrosity-vim
   
- 
-  ![image](https://user-images.githubusercontent.com/72895337/127372993-52ac2b3a-f02b-41c2-8d07-d2f2c819af24.png)
   
-  ![image](https://user-images.githubusercontent.com/72895337/127373211-04fae9ad-7ec0-43ae-94e4-050a5171adc8.png)
+  <img src="https://user-images.githubusercontent.com/72895337/127372993-52ac2b3a-f02b-41c2-8d07-d2f2c819af24.png" style="max-width:50%">
+  
+<img src="https://user-images.githubusercontent.com/72895337/127373211-04fae9ad-7ec0-43ae-94e4-050a5171adc8.png" style="max-width:50%;">  
 
-
-  
-  
-```
-              ...                            
-             ;::::;                           
-           ;::::; :;                          
-         ;:::::'   :;                         
-        ;:::::;     ;.                        
-       ,:::::'       ;           OOO\         
-       ::::::;       ;          OOOOO\        
-       ;:::::;       ;         OOOOOOOO       
-      ,;::::::;     ;'         / OOOOOOO      
-    ;:::::::::`. ,,,;.        /  / DOOOOOO    
-  .';:::::::::::::::::;,     /  /     DOOOO   
- ,::::::;::::::;;;;::::;,   /  /        DOOO  
-;`::::::`'::::::;;;::::: ,#/  /          DOOO 
-:`:::::::`;::::::;;::: ;::#  /            DOOO
-::`:::::::`;:::::::: ;::::# /              DOO
-`:`:::::::`;:::::: ;::::::#/               DOO
- :::`:::::::`;; ;:::::::::##                OO
- ::::`:::::::`;::::::::;:::#                OO
- `:::::`::::::::::::;'`:;::#                O 
-  `:::::`::::::::;' /  / `:#                  
-
-  
- 
-```
-  
   
 </div>
 
@@ -54,7 +25,10 @@ $ git clone URL
 
 ## How it Works?
 ### File structure
-![image](https://user-images.githubusercontent.com/72895337/125215346-e0320d80-e280-11eb-8ea1-96febef22d63.png)
-### Sourcing Structure
-Sourcing I am refering to how files call other files and so on so you can know if you are efiting the config where to place configs and where to call
-![image](https://user-images.githubusercontent.com/72895337/125215326-cee90100-e280-11eb-9a6c-e62be0364973.png)
+
+<img src="https://user-images.githubusercontent.com/72895337/125215346-e0320d80-e280-11eb-8ea1-96febef22d63.png" height="500">
+
+Spells are just lua requiring the modules - So the config file has spells/modules like keybindings etc.
+
+## Contents
+This config has the indispensable for a config based on productivity. All the config uses Packer to manage the plugins so they can be lazy loaded to save startup time. (haven't done this yet but can be done) Then for packer the most important plugins are TreeSitter for highlighting, Whichkey for good keybindings, telescope to fuzzy yoouuur way to find anything you want, lsp-config to make configuring lsp easier and finally Dap for debug.
