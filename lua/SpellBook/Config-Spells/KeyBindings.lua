@@ -115,6 +115,10 @@ vim.api.nvim_set_keymap('n', '<S-x>', ':BufferClose<CR>', { noremap = true, sile
 
 vim.api.nvim_set_keymap('n','π',"<cmd>lua require'telescope'.extensions.project.project{}<cr>",{ noremap = true, silent = true })
 
+-- =========================== Telescope/project ====================================
+
+vim.api.nvim_set_keymap('n','<leader>F','<cmd>Telescope frecency<cr>',{ noremap = true, silent = true})
+
 -- =========================== Compe ====================================
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
@@ -144,6 +148,7 @@ local mappings = {
     ["c"] = "Close Buffer",
     ["e"] = "Explorer",
     ["f"] = "Find File",
+    ["F"] = "Frecency Algo",
     ["h"] = "No Highlight",
     d = {
         name = "+Debug",

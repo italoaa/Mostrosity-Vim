@@ -109,7 +109,15 @@ return require("packer").startup(function(use)
     -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},{'nvim-telescope/telescope-fzy-native.nvim'},{'nvim-telescope/telescope-project.nvim'}},
+      requires = {
+        {'tami5/sql.nvim'},
+        {"nvim-telescope/telescope-frecency.nvim"},
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+        {'nvim-telescope/telescope-fzy-native.nvim'},
+        {'nvim-telescope/telescope-project.nvim'},
+        {'nvim-telescope/telescope-ghq.nvim'}
+       },
       config = function ()
       	        require('SpellBook.Packer-Spells.Telescope')
       end

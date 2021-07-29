@@ -19,7 +19,7 @@ require('telescope').setup {
             vertical = { mirror = false },
 },
         file_sorter = require'telescope.sorters'.get_fzy_sorter,
-        file_ignore_patterns = {'packer_compiled'},
+        file_ignore_patterns = {'packer_compiled','.git'},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         path_display = {'shorten'},
         border = {},
@@ -44,7 +44,13 @@ require('telescope').setup {
         }
     },
     extensions = {
-        fzy_native = {override_generic_sorter = false, override_file_sorter = true}
+        fzy_native = {override_generic_sorter = false, override_file_sorter = true},
+        frecency = {
+            show_scores = true,
+            show_unindexed = true,
+            ignore_patterns = {"*.git/*", "*/tmp/*"},
+        }
+
     }
 }
 
@@ -62,13 +68,17 @@ require('telescope').setup {
 -- <Esc>        close telescope (in normal mode)
 
 require'telescope'.load_extension('project')
+require'telescope'.load_extension('ghq')
+require'telescope'.load_extension('frecency')
 --
 
 local M = {}
 M.search_dotfiles = function ()
     require("telescope.builtin").find_files({
+        hidden = true,
+        file_ignore_patterns = {'packer_compiled','.git'},
         prompt_title = "< Da Dot Files >",
-        cwd = "~/.config/",
+        cwd = "/Users/italoamaya/Dot",
     })
 end
 
