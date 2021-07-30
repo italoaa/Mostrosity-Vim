@@ -106,6 +106,9 @@ vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true,
 -- close buffer
 vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
 
+-- Reload Config
+vim.api.nvim_set_keymap("n", "<leader>R", "<cmd>source ~/.config/nvim/init.lua<CR>", {noremap = true, silent = true})
+
 -- buffer navigation
 vim.api.nvim_set_keymap('n', '<TAB>', ':BufferNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':BufferPrevious<CR>', { noremap = true, silent = true })
@@ -150,6 +153,7 @@ local mappings = {
     ["f"] = "Find File",
     ["F"] = "Frecency Algo",
     ["h"] = "No Highlight",
+    ["R"] = "Reload nvim",
     d = {
         name = "+Debug",
         b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint"},
