@@ -1,4 +1,3 @@
-
 --888   Y88b                  888
 --888    888                  888
 --888   d88P 8888b.   .d8888b 888  888  .d88b.  888d888
@@ -215,6 +214,10 @@ end}
                require('SpellBook.Packer-Spells.Comment')
             end,
 }
+
+    -- Indent
+    use {"lukas-reineke/indent-blankline.nvim"}
+
     -- Keybinding
     use {"folke/which-key.nvim"}
 

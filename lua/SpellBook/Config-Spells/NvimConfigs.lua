@@ -1,10 +1,14 @@
---               _            
---  ___   _   _ (_)  ___ ___  
+--               _
+--  ___   _   _ (_)  ___ ___
 --/' _ `\( ) ( )| |/' _ ` _ `\
 --| ( ) || \_/ || || ( ) ( ) |
 --(_) (_)`\___/'(_)(_) (_) (_|
 --
 --
+
+vim.g.indent_blankline_char = ' '
+vim.g.indent_blankline_use_treesitter = true
+vim.g.indent_blankline_show_current_context = true
 
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.

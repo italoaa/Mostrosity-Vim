@@ -63,7 +63,7 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silen
 -- vim.api.nvim_set_keymap("i", "<D-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("x", "<D-j>", ":m '>+1<CR>gv-gv", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("x", "<D-k>", ":m '<-2<CR>gv-gv", { noremap = true, silent = true })
--- 
+--
 
 
 
@@ -173,11 +173,40 @@ local mappings = {
         u = {"<cmd>call v:lua.__fterm_gitui()<cr>","Git Ui"}
     },
     l = {
-        name = "+LSP",
-        f = {"<cmd>LspFormatting<cr>", "Format"},
-        i = {"<cmd>LspInfo<cr>", "Info"},
-        t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
-    },
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = {
+          "<cmd>Telescope lsp_document_diagnostics<cr>",
+          "Document Diagnostics",
+        },
+        w = {
+          "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+          "Workspace Diagnostics",
+        },
+        f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        -- j = {
+        --   "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+        --   "Next Diagnostic",
+        -- },
+        -- k = {
+        --   "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+        --   "Prev Diagnostic",
+        -- },
+        p = {
+          name = "Peek",
+          d = { "<cmd>lua require('lsp.peek').Peek('definition')<cr>", "Definition" },
+          t = { "<cmd>lua require('lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
+          i = { "<cmd>lua require('lsp.peek').Peek('implementation')<cr>", "Implementation" },
+        },
+        q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = {
+          "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+          "Workspace Symbols",
+        },
+      },
     s = {
         name = "+Search",
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
