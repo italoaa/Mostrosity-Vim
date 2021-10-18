@@ -18,7 +18,7 @@ require("dapui").setup({
       "stacks",
       "watches"
     },
-    width = 50,
+    size = 50,
     position = "left" -- Can be "left" or "right"
   },
   tray = {
@@ -26,7 +26,7 @@ require("dapui").setup({
     elements = {
       "repl"
     },
-    height = 0,
+    size = 0,
     position = "bottom" -- Can be "bottom" or "top"
   },
   floating = {

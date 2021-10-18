@@ -15,7 +15,7 @@ vim.g.sonokai_style = 'andromeda'
 
 vim.cmd('colorscheme sonokai')
 
-vim.cmd('colorscheme lunar')
+-- vim.cmd('colorscheme lunar')
 -- vim.cmd('colorscheme zephyr')
 --
 -- local base16 = require "base16"
